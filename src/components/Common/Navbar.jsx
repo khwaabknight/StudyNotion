@@ -91,11 +91,7 @@ function Navbar() {
                           <p className="text-center">Loading...</p>
                         ) : subLinks.length ? (
                           <>
-                            {subLinks
-                              ?.filter(
-                                (subLink) => subLink?.courses?.length > 0
-                              )
-                              ?.map((subLink, i) => (
+                            {subLinks?.map((subLink, i) => (
                                 <Link
                                   to={`/catalog/${subLink.name
                                     .split(" ")
