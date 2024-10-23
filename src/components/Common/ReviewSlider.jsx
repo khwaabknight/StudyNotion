@@ -36,19 +36,33 @@ function ReviewSlider() {
   // console.log(reviews)
 
   return (
-    <div className="text-white">
-      <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
-        <Swiper
-          slidesPerView={4}
+    <div className="text-white w-full">
+      <div className="my-[50px] h-[184px] ">
+      <Swiper
+          // slidesPerView={4}
           spaceBetween={25}
           loop={true}
           freeMode={true}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            320: {
+              slidesPerView: 1,
+            },
+          }}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           modules={[FreeMode, Pagination, Autoplay]}
-          className="w-full "
+          className=""
         >
           {reviews.map((review, i) => {
             return (
